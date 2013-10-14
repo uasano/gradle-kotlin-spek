@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.6.602'
+    	classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.6.602'
     }
 }
 
@@ -16,7 +16,9 @@ repositories {
 }
 
 dependencies {
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.6.602'
+    compile 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.6.602'
+    testCompile 'junit:junit:4.11'
+    testCompile fileTree(dir: 'libs', include: '*.jar')
 }
 
 sourceSets {
