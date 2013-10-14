@@ -1,24 +1,24 @@
+apply plugin: 'kotlin'
+apply plugin: "idea"
 
 buildscript {
+    ext.kotlin_version = '0.6.602'
     repositories {
         mavenCentral()
     }
     dependencies {
-    	classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.6.602'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$ext.kotlin_version"
     }
 }
-
-apply plugin: "kotlin"
-apply plugin: "idea"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.6.602'
     testCompile 'junit:junit:4.11'
     testCompile fileTree(dir: 'libs', include: '*.jar')
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$ext.kotlin_version"
 }
 
 sourceSets {
